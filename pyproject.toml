@@ -1,0 +1,71 @@
+[tool.poetry]
+name = "django-tables-creator"
+version = "0.1.0"
+description = ""
+authors = ["mcclawdy <mmmcclawdy@gmail.com>"]
+readme = "README.md"
+packages = [{include = "django_tables_creator"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+target-version = "py39"
+line-length = 120
+
+exclude = [
+    "migrations",
+    "settings.py",
+    "settings_qa.py",
+    "pb",
+    "tests" # because a lot problems like PT023, INP001, PT001
+]
+
+ignore = [
+    "F403",    # star imports
+    "F405",    # probably undefined stuff from star imports
+    "E731",    # lambda expressions
+
+    # TODO: delete below errors from ignore
+    "D102",    # missing dockstring in public method
+    "A003",    # Class attribute `id` is shadowing a python builtin
+    "SIM105",  # Use `contextlib.suppress` insted of try-except-pass
+    "ARG004",  # Unused method argument
+    "C901",    # method is too complex
+    # TODO: must decide ignore them or not
+    "C416",    # Unnecessary `list` comprehension
+    "C408",    # Unnecessary `dict` call
+    "C409",    # Unnecessary `list` literal passed to `tuple()`
+    "T"        # prints
+]
+
+select = [
+    "E",  # default
+    "F",  # default
+    "B",  # bugbear, blind-except
+    "Q",  # quotes
+    "A",  # builtins
+    "PT",  # pytest-style
+    "INP",  # pep420
+    "SIM",  # simplify
+    "COM",
+     "C",  # comprehensions
+]
+
+[tool.ruff.flake8-quotes]
+inline-quotes = "double"
+multiline-quotes = "double"
+
+
+[tool.ruff.flake8-annotations]
+ignore-fully-untyped = true
+
+[tool.ruff.flake8-unused-arguments]
+ignore-variadic-names = true
+
+
