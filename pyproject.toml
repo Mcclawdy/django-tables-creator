@@ -8,6 +8,7 @@ packages = [{include = "django_tables_creator"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+ruff = "^0.0.261"
 
 [build-system]
 requires = ["poetry-core"]
@@ -15,7 +16,7 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.ruff]
-target-version = "py39"
+target-version = "py310
 line-length = 120
 
 exclude = [
@@ -41,7 +42,6 @@ ignore = [
     "C416",    # Unnecessary `list` comprehension
     "C408",    # Unnecessary `dict` call
     "C409",    # Unnecessary `list` literal passed to `tuple()`
-    "T"        # prints
 ]
 
 select = [
