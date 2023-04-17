@@ -1,0 +1,15 @@
+/venv/
+/.idea
+# DO NOT PUT '/*/migrations' in .gitignore for master !
+/.redis-server/
+/.run/
+*.xml
+*.pyc
+__pycache__
+/upload/
+/.vscode/
+simple_office.log
+/celerybeat-schedule
+/celerybeat.pid
+*.DS_Store
+celerybeat-schedule.db
